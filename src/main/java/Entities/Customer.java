@@ -31,6 +31,10 @@ public class Customer implements Serializable {
     private String FirstName; 
     private String LastName; 
     
+    
+    
+    
+    
     @ElementCollection
     @CollectionTable(
     name="hobby", 

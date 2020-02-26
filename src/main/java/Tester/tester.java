@@ -20,22 +20,19 @@ public class tester {
     
     
     public static void main(String[] args) {
-        EntityManager em = emf.createEntityManager(); 
-        
-        em.getTransaction().begin();
-        
-        Customer c1 = new Customer ("Jens", "Jensen") ; 
-        Customer c2 = new Customer ("Mads", "Madsen") ; 
-        
-        c1.addHobby("Løb");
-        c1.addHobby("Øl");
-        c2.addHobby("Folkedans");
-        
-        em.persist(c1);
-        em.persist(c2);
-        
-        
-        em.getTransaction().commit();
+//        EntityManager em = emf.createEntityManager(); 
+//        em.getTransaction().begin();
+//        Customer c1 = new Customer ("Jens", "Jensen") ; 
+//        Customer c2 = new Customer ("Mads", "Madsen") ; 
+//        c1.addHobby("Løb");
+//        c1.addHobby("Øl");
+//        c2.addHobby("Folkedans");
+//        em.persist(c1);
+//        em.persist(c2);
+//        em.getTransaction().commit();
+
+    Persistence.generateSchema("pu", null);
+
     }
     
 }
