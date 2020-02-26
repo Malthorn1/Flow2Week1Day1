@@ -25,6 +25,13 @@ public class Adress implements Serializable {
     private String street; 
     private String city; 
 
+    public Adress(String street, String city) {
+        this.street = street;
+        this.city = city;
+    }
+    
+    
+
     public Adress(Long id, String street, String city) {
         this.id = id;
         this.street = street;

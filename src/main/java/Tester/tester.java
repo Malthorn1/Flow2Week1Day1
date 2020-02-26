@@ -5,6 +5,7 @@
  */
 package Tester;
 
+import Entities.Adress;
 import Entities.Customer;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -32,7 +33,30 @@ public class tester {
 //        em.getTransaction().commit();
 
     Persistence.generateSchema("pu", null);
+    EntityManager em = emf.createEntityManager(); 
+    em.getTransaction().begin();
+    
+    Customer c1 = new Customer  ("Jens", "Madsen"); 
+    Customer c2 = new Customer ("Kasper", "Klo"); 
+    em.persist(c1);
+    em.persist(c2);
+    em.getTransaction().commit();
 
+    Adress a1 = new Adress ("Vejnavn", "By");
+    Adress a2= new Adress ("Kaspers vej", "Klo by"); 
+    
+    
+    em.getTransaction().begin();
+    c1.addAdress(a1);
+    c2.addAdress(a2);
+    
+    
+    em.persist(c2);
+    
+    em.getTransaction().commit();
+    
+    
+    
     }
     
 }
