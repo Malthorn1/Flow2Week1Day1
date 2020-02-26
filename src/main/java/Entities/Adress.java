@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -24,6 +25,8 @@ public class Adress implements Serializable {
     private Long id;
     private String street; 
     private String city; 
+    @OneToOne(mappedBy = "adress")
+    private Customer customer;
 
     public Adress(Long id, String street, String city) {
         this.id = id;
