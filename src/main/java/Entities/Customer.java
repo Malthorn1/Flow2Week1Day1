@@ -16,6 +16,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -30,6 +31,9 @@ public class Customer implements Serializable {
     private Long id;
     private String FirstName; 
     private String LastName; 
+    @OneToOne
+    private Adress adress; 
+    
     
     
     
