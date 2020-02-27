@@ -16,6 +16,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -32,6 +33,8 @@ public class Customer implements Serializable {
     private String LastName; 
     
     
+    @OneToMany(mappedBy = "customer")
+    private List<Adress> adresses = new ArrayList<>(); 
     
     
     
